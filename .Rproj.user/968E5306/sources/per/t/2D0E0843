@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1621834012893.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2252091095",
+    "id" : "2D0E0843",
+    "lastKnownWriteTime" : 1621920542,
+    "last_content_update" : 1621920542694,
+    "path" : "~/R scripts 26.04.20 e.t.c/R for Data Science/rfordataviz/emoji.R",
+    "project_path" : "emoji.R",
+    "properties" : {
+        "cursorPosition" : "24,18",
+        "scrollLine" : "0",
+        "tempName" : "Untitled2"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

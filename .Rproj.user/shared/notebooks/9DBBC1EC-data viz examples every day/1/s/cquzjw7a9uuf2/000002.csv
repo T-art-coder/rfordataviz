@@ -1,0 +1,3 @@
+"0","ggplot(data = gss_sm,"
+"0","            mapping = aes(x = bigregion, fill = religion)) + "
+"0","  geom_bar(position = ""dodge"", mapping = aes(y = ..prop.., group = religion))"

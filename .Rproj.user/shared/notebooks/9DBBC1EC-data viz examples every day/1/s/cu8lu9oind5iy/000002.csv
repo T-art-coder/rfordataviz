@@ -1,0 +1,8 @@
+"0",""
+"0","rel_by_region <- gss_sm %>%"
+"0","    group_by(bigregion, religion) %>%"
+"0","    summarize(N = n()) %>%"
+"0","    mutate(freq = N / sum(N),"
+"0","           pct = round((freq*100), 0))"
+"2","`summarise()` has grouped output by 'bigregion'. You can override using the `.groups` argument.
+"

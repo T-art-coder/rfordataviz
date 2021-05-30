@@ -1,0 +1,5 @@
+"0","oh_wi <- c(""OH"", ""WI"")"
+"0",""
+"0","p <- ggplot(data = subset(midwest, subset = state %in% oh_wi),"
+"0","            mapping = aes(x = percollege, fill = state))"
+"0","p + geom_histogram(alpha = 0.4, bins = 20) + theme_void()"

@@ -1,0 +1,126 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+
+
+```{r}
+library(ggplot2)
+library(gapminder)
+library(socviz)
+```
+```{r}
+p <- ggplot(data = gss_sm,
+            mapping = aes(x = age, y = childs))
+p + geom_point(alpha = 0.2) +
+  geom_smooth() +
+  facet_grid(sex ~ race)
+```
+# use group to make sum of props
+
+```{r}
+ggplot(data = gss_sm, mapping = aes(x = bigregion)) + 
+  geom_bar(mapping = aes(y = ..prop.., group = 1))
+
+```
+
+
+```{r}
+
+ggplot(data = gss_sm, mapping = aes(x = religion, fill= religion)) + 
+  geom_bar() + guides(fill = FALSE) + theme_minimal()
+```
+
+```{r}
+ggplot(data = gss_sm,
+            mapping = aes(x = bigregion, fill = religion)) + 
+  geom_bar(position = "dodge", mapping = aes(y = ..prop.., group = religion))
+  
+```
+
+```{r}
+ggplot(data = gss_sm,
+            mapping = aes(x = religion)) + 
+  geom_bar(position = "dodge", mapping = aes(y = ..prop.., group = bigregion)) +
+  facet_wrap(~ bigregion, ncol = 2)
+```
+
+```{r}
+oh_wi <- c("OH", "WI")
+
+p <- ggplot(data = subset(midwest, subset = state %in% oh_wi),
+            mapping = aes(x = percollege, fill = state))
+p + geom_histogram(alpha = 0.4, bins = 20) + theme_void()
+```
+```{r}
+ggplot(data = midwest, mapping = aes(x = area, fill = state, color = state)) +
+  geom_density(alpha = 0.3) +theme_bw()
+```
+
+```{r}
+p <- ggplot(data = titanic,
+            mapping = aes(x = fate, y = percent, fill = sex))
+p + geom_bar(position = "dodge", stat = "identity") + theme(legend.position = "top") + theme_bw()
+```
+
+The other column is the average life expectancy in a given year for OECD countries, excluding the United States. The usa column is the US life expectancy, diff is the difference between the two values, and hi_lo indicates whether the US value for that year was above or below the OECD average. We will plot the difference over time, and use the hi_lo variable to color the columns in the chart.
+```{r}
+head(oecd_sum)
+```
+
+
+```{r}
+p <- ggplot(data = oecd_sum,
+            mapping = aes(x = year, y = diff, fill = hi_lo))
+p + geom_col() + guides(fill = FALSE) +
+  labs(x = NULL, y = "Difference in Years",
+       title = "The US Life Expectancy Gap",
+       subtitle = "Difference between US and OECD
+                   average life expectancies, 1960-2015",
+       caption = "Data: OECD. After a chart by Christopher Ingraham,
+                  Washington Post, December 27th 2017.")  + theme_bw()
+```
+```{r}
+library(dplyr)
+```
+
+```{r}
+
+rel_by_region <- gss_sm %>%
+    group_by(bigregion, religion) %>%
+    summarize(N = n()) %>%
+    mutate(freq = N / sum(N),
+           pct = round((freq*100), 0))
+```
+
+```{r}
+rel_by_region  %>% group_by(bigregion)  %>%
+  summarize(total = sum(pct))
+```
+
+
+
+```{r}
+ggplot(rel_by_region, aes(x = bigregion, y = pct, fill= religion)) +
+  geom_col(position = 'dodge2') + 
+  labs(x = "Region",y = "Percent", fill = "Religion") +
+    theme(legend.position = "top")
+```
+
+
+

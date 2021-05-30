@@ -1,0 +1,27 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1622056647604.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3417997014",
+    "id" : "49414529",
+    "lastKnownWriteTime" : 1622267655,
+    "last_content_update" : 1622267655464,
+    "path" : "C:/Users/az200/Downloads/2586309/2586309/data viz examples every day.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "121,34",
+        "disableDependencyDiscovery" : "1",
+        "scrollLine" : "110"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

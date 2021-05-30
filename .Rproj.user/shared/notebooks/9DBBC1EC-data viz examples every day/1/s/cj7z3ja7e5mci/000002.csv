@@ -1,0 +1,5 @@
+"0","p <- ggplot(data = gss_sm,"
+"0","            mapping = aes(x = age, y = childs))"
+"0","p + geom_point(alpha = 0.2) +"
+"0","  geom_smooth() +"
+"0","  facet_grid(sex ~ race)"

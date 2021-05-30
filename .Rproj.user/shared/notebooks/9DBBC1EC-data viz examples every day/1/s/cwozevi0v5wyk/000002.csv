@@ -1,0 +1,4 @@
+"0","ggplot(rel_by_region, aes(x = bigregion, y = pct, fill= religion)) +"
+"0","  geom_col(position = 'dodge2') + "
+"0","  labs(x = ""Region"",y = ""Percent"", fill = ""Religion"") +"
+"0","    theme(legend.position = ""top"")"

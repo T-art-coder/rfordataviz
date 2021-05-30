@@ -1,0 +1,3 @@
+"0","ggplot(data = gss_sm, mapping = aes(x = bigregion)) + "
+"0","  geom_bar(mapping = aes(y = ..prop.., group = 1))"
+"0",""

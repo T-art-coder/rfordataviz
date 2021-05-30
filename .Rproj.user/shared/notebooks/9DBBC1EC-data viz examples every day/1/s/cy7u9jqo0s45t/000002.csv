@@ -1,0 +1,2 @@
+"0","ggplot(data = midwest, mapping = aes(x = area, fill = state, color = state)) +"
+"0","  geom_density(alpha = 0.3) +theme_bw()"

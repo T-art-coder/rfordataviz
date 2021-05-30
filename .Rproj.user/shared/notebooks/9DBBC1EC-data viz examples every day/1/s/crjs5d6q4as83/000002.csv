@@ -1,0 +1,4 @@
+"0","ggplot(data = gss_sm,"
+"0","            mapping = aes(x = religion)) + "
+"0","  geom_bar(position = ""dodge"", mapping = aes(y = ..prop.., group = bigregion)) +"
+"0","  facet_wrap(~ bigregion, ncol = 2)"
